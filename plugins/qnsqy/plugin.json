@@ -1,0 +1,36 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "qnsqy",
+  "version": "1.0.0",
+  "description": "QNSQY on your own Linux computer: scan for quantum-vulnerable cryptography (CycloneDX CBOM), encrypt to a public key, verify signatures and hashes. Its tools take no passwords, passphrases, private keys, API keys or payment tokens.",
+  "author": {
+    "name": "Quantum Sequrity, Inc.",
+    "email": "support@quantumsequrity.com",
+    "url": "https://quantumsequrity.com"
+  },
+  "homepage": "https://quantumsequrity.com",
+  "repository": "https://github.com/quantumsequrity/qnsqy-codex",
+  "keywords": [
+    "post-quantum",
+    "pqc",
+    "cryptography",
+    "cbom",
+    "ml-kem",
+    "ml-dsa",
+    "encryption"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "QNSQY",
+        "shortDescription": "Post-quantum CBOM scan, encryption to public keys and verification on your own Linux computer.",
+        "developerName": "Quantum Sequrity, Inc.",
+        "category": "Security",
+        "websiteURL": "https://quantumsequrity.com",
+        "privacyPolicyURL": "https://quantumsequrity.com/privacy",
+        "termsOfServiceURL": "https://quantumsequrity.com/terms",
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "qnsqy_strict": {
+      "type": "stdio",
+      "command": "qnsqy",
+      "args": [
+        "--mcp-profile=strict"
+      ],
+      "cwd": "${PLUGIN_DATA}"
+    }
+  }
+}
