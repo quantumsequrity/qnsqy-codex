@@ -88,7 +88,7 @@ The tools you see depend on the user's plan and on their QNSQY build, so rely
 on the tool list that you actually have.
 
 *   **Find quantum-vulnerable cryptography or make a CBOM**: `qnsqy_scan`. Use
-    `format: cyclonedx` for a CycloneDX 1.6 CBOM. It does not overwrite an
+    `format: cyclonedx` for a CycloneDX 1.7 CBOM. It does not overwrite an
     existing report file.
 *   **Encrypt for someone**: `qnsqy_encrypt` for one file and
     `qnsqy_batch_encrypt` for several files (Pro and above). Set `recipient` to
