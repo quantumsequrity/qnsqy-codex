@@ -77,6 +77,69 @@ same names as the strict ones stay visible to the agent, and some of them take
 a password, such as its encrypt tool. The instructions are for the model; they
 do not block anything.
 
+## Other AI assistants
+
+We publish QNSQY plugins for these assistants:
+
+*   **Claude Code**: https://github.com/quantumsequrity/qnsqy-claude-plugin
+*   **Codex**: https://github.com/quantumsequrity/qnsqy-codex
+*   **Gemini CLI and Antigravity CLI**:
+    https://github.com/quantumsequrity/qnsqy-gemini
+
+Other assistants that can start a local MCP server can use QNSQY's strict
+tool server without a plugin. Add the server with your assistant's command
+below, then start a new session. The Requirements above still apply: Linux,
+and QNSQY's current release from our signed packages.
+
+Before you start, remove any QNSQY entry that you added to the assistant
+earlier with `qnsqy --mcp`, because some of its tools take a password. Set the
+assistant to ask before each QNSQY call where it can: one that does not ask can
+make a valid but wrong call on its own, such as encrypting a file to the wrong
+public key. Check a project's own settings before you trust the project,
+because they can add MCP servers or replace one of the same name. Never approve
+a `qnsqy` shell command that carries a password.
+
+*   **GitHub Copilot in VS Code, and Copilot CLI**: both read the same file,
+    `~/.copilot/mcp-config.json`. With Copilot CLI installed, run:
+
+    ```
+    copilot mcp add qnsqy_strict -- qnsqy --mcp-profile=strict
+    ```
+
+    Without Copilot CLI, run **MCP: Add Server** from VS Code's Command
+    Palette, choose **Command (stdio)**, enter `qnsqy --mcp-profile=strict`,
+    and choose **Copilot Global**.
+*   **Grok Build**:
+
+    ```
+    grok mcp add qnsqy -- qnsqy --mcp-profile=strict
+    ```
+
+    Grok Build also loads the MCP servers in Claude Code's settings
+    (`~/.claude.json`) and in a project's `.mcp.json`, so remove an old
+    `qnsqy --mcp` entry there too.
+*   **OpenCode**:
+
+    ```
+    opencode mcp add qnsqy_strict -- qnsqy --mcp-profile=strict
+    ```
+
+    This adds the server to the current project. OpenCode's `--global` option
+    adds a server for every project.
+
+*   **Qwen Code** installs our Gemini CLI extension:
+
+    ```
+    qwen extensions install https://github.com/quantumsequrity/qnsqy-gemini
+    ```
+
+    Qwen Code's documentation says that it keeps the extension's MCP server
+    and context file. It does not say that it keeps the extension's list of
+    hidden tools or its block on shell commands that run `qnsqy`, so do not
+    count on either there.
+*   **Any other assistant**: add a local (stdio) MCP server that runs the
+    command `qnsqy` with the single argument `--mcp-profile=strict`.
+
 ## What the plugin runs, sends and fetches
 
 *   **Runs**: Codex starts your installed QNSQY as a local tool server named

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "qnsqy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "QNSQY on your own Linux computer: scan for quantum-vulnerable cryptography (CycloneDX CBOM), encrypt to a public key, verify signatures and hashes. Its tools take no passwords, passphrases, private keys, API keys or payment tokens.",
   "author": {
     "name": "Quantum Sequrity, Inc.",
